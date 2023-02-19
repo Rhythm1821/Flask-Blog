@@ -1,3 +1,4 @@
+import os
 
 class Config:
     SECRET_KEY = '9c492c5f6e48c4680987b6f9fd8c5685'
@@ -5,5 +6,5 @@ class Config:
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'your_email@example.com'
-    MAIL_PASSWORD = "your_email_password"
+    MAIL_USERNAME = os.environ.get('EMAIL_USER')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASS')
